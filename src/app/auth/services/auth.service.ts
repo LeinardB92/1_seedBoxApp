@@ -18,8 +18,8 @@ export class AuthService {
   private _authStatus = signal<AuthStatus>(AuthStatus.checking);
 
   //! Al mundo exterior
-  public currentUser = computed(() => this._currentUser);
-  public authStatus = computed(() => this._authStatus);
+  public currentUser = computed(() => this._currentUser());
+  public authStatus = computed(() => this._authStatus());
 
   private setAuthentication(user: User, token: string) {
     this._currentUser.set(user);
